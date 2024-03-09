@@ -6,7 +6,7 @@ export async function POST() {
   // Creamos una promesa para ejecutar el script Python
   const executeScript = () => {
     return new Promise((resolve, reject) => {
-      exec('python src/app/scripts/py.py', (error, stdout, stderr) => {
+      exec('python'+ __dirname + 'src/app/scripts/py.py', (error, stdout, stderr) => {
         if (error) {
           console.error(`Error al ejecutar el script: ${error}`);
           reject(error);
