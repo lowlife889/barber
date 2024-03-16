@@ -3,13 +3,13 @@ import "firebase/auth"
 
 
 const firebaseConfig = {
-  apiKey: process.env(apiKey),
-  authDomain: process.env(authDomain),
-  projectId: process.env(projectId),
-  storageBucket: process.env(storageBucket),
-  messagingSenderId: process.env(messagingSenderId),
-  appId: process.env(appId),
-  measurementId: process.env(measurementId)
+  apiKey: "AIzaSyBe9GypczjOmkeJOGb2RA0uZaZ9C2a3JAA",
+  authDomain: "barber-d4311.firebaseapp.com",
+  projectId: "barber-d4311",
+  storageBucket: "barber-d4311.appspot.com",
+  messagingSenderId: "249558987001",
+  appId: "1:249558987001:web:21e22db1e0ad7731703228",
+  measurementId: "G-H04GYKPJSF"
 };
 const app = initializeApp(firebaseConfig);
 // Initialize Firebase
