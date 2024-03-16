@@ -2,22 +2,38 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  
 }
 
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  color: rgb(200,200,200);
+  height: fit-content;
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  width: 2px; /* Grosor del scrollbar para navegadores webkit */
 }
 
+body::-webkit-scrollbar-track {
+  background: transparent; /* Color de fondo del scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color del thumb del scrollbar */
+  border: transparent; /* Borde del thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #747474; /* Color del thumb al pasar el mouse */
+}
+body::-webkit-scrollbar-thumb:active {
+  background-color: #575757; /* Color del thumb al pasar el mouse */
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow: hidden;
+  background-color: rgb(3, 3, 3);
 }
 
 a {
@@ -25,8 +41,13 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Example of how to fade our content in */
+
+.LazyLoad {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.is-visible {
+  opacity: 1;
 }
