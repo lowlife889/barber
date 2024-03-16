@@ -16,7 +16,7 @@ import "@/app/globals.css";
 import "@/app/home.css";
 
 
-function agenda() {
+function Agenda() {
   //Auth settings
   const auth = getAuth(app);
   //Turno del usuario
@@ -126,4 +126,4 @@ function agenda() {
   );
 }
 
-export default agenda;
+export default Agenda;
