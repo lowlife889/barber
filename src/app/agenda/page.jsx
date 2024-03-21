@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import PedirTurno from "@/components/PedirTurno";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { signInWithPopup, GoogleAuthProvider, getAuth } from "firebase/auth";
+import { signInWithRedirect, GoogleAuthProvider, getAuth } from "firebase/auth";
 import app from "@/libs/firebase";
 import { Poppins } from "next/font/google";
 const inter = Poppins({
@@ -67,7 +67,7 @@ function Agenda() {
     const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
+      await signInWithRedirect(auth, provider);
     } catch (e) {
       console.error("Error signing in with Google", e.message);
     }
@@ -106,7 +106,8 @@ function Agenda() {
               <>
                 <p
                   style={{
-                    width: "60ch",
+                    width: "90vw",
+                    fontSize:"14px",
                     textAlign: "center",
                     marginTop: "120px",
                   }}
