@@ -97,17 +97,29 @@ export async function POST(req){
           where:{
             year:fechaActual.getFullYear().toString(),
             mes: (fechaActual.getMonth()+2).toString(),
-            dia:x.toString(),
+            dia:(x+1).toString(),
             barbero:res.filtroBarbero
           }
         })
-        response.push(turno)
+        console.log(x+1)
+        if(turno.length!=0){
+          for (const iterator of turno) {
+            response.push(iterator)
+          }
+        }
+        x++;
       }
+      console.log(response)
+      return NextResponse.json({
+        turnos:response,
+        balance:calculaBalance(response)
+      })
+    }else{
+      return NextResponse.json({
+        turnos:response,
+        balance:calculaBalance(response)
+      })
     }
-    return NextResponse.json({
-      turnos:response,
-      balance:calculaBalance(response)
-    })
   }else if(res.filtroFecha=="semana" && res.filtroBarbero=="Barbero2"){
     let response= await prisma.turno.findMany({
       where:{
@@ -127,17 +139,29 @@ export async function POST(req){
           where:{
             year:fechaActual.getFullYear().toString(),
             mes: (fechaActual.getMonth()+2).toString(),
-            dia:x.toString(),
+            dia:(x+1).toString(),
             barbero:res.filtroBarbero
           }
         })
-        response.push(turno)
+        console.log(x+1)
+        if(turno.length!=0){
+          for (const iterator of turno) {
+            response.push(iterator)
+          }
+        }
+        x++;
       }
+      console.log(response)
+      return NextResponse.json({
+        turnos:response,
+        balance:calculaBalance(response)
+      })
+    }else{
+      return NextResponse.json({
+        turnos:response,
+        balance:calculaBalance(response)
+      })
     }
-    return NextResponse.json({
-      turnos:response,
-      balance:calculaBalance(response)
-    })
   }else if(res.filtroFecha=="semana" && res.filtroBarbero==null){
     let response= await prisma.turno.findMany({
       where:{
@@ -156,16 +180,28 @@ export async function POST(req){
           where:{
             year:fechaActual.getFullYear().toString(),
             mes: (fechaActual.getMonth()+2).toString(),
-            dia:x.toString(),
+            dia:(x+1).toString(),
           }
         })
-        response.push(turno)
+        if(turno.length!=0){
+          for (const iterator of turno) {
+            response.push(iterator)
+          }
+        }
+        x++;
       }
+      return NextResponse.json({
+        turnos:response,
+        balance:calculaBalance(response)
+      })
+    }else{
+      return NextResponse.json({
+        turnos:response,
+        balance:calculaBalance(response)
+      })
     }
-    return NextResponse.json({
-      turnos:response,
-      balance:calculaBalance(response)
-    })
+    
+    
   }
 
   if(res.filtroFecha=="mes" && res.filtroBarbero=="Barbero1"){
