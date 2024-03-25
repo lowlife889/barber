@@ -27,7 +27,7 @@ function TurnosSection() {
 
   useEffect(() => {
     getTurnos();
-  }, [filtro, filtro2]);
+  }, [filtro, filtro2, getTurnos]);
 
   return (
     <main className="turnos-section">

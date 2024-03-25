@@ -268,7 +268,7 @@ export default function Home() {
           }}
         >
           <strong style={{width:"fit-content", fontWeight:"300"}}>Todos los derechos reservados </strong>
-          <strong style={{minWidth:"170px"}}>&copy; Barber Studio's{" "}
+          <strong style={{minWidth:"170px"}}>&copy; Barber Studio&apos;s{" "}
           {new Date().getFullYear()}</strong>
         </span>
         
