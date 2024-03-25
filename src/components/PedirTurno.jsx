@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from "react";
 import Form from "./Form";
 import "@/app/home.css"
+import { useRouter } from "next/navigation";
 
 function PedirTurno({ email, tieneTurno2 }) {
   //Almacena un $ si no tiene turno y el turno si de lo contrario tiene uno
   const [tieneTurno, setTieneTurno] = useState("$");
-
+  const router = useRouter()
   //Le asigna el valor tieneTurno2 pasado por param a tieneTurno, este valor traido de page indica si el user tiene turno
   useEffect(() => {
     if (tieneTurno2 == null) {
@@ -72,9 +73,14 @@ function PedirTurno({ email, tieneTurno2 }) {
                     flexDirection: "column",
                     gap: "10px",
                     alignItems: "center",
-                    marginTop: "100px",
+                    marginTop: "0px",
                   }}
                 >
+                  <div className="ubi-container">
+                    <img src="/images/ubic.PNG" onClick={()=>{
+                      router.push("https://www.google.com/maps/dir//-32.9100356,-60.8149866/@-32.9102565,-60.8149974,18z/data=!4m2!4m1!3e0?entry=ttu")
+                    }}/>
+                  </div>
                   <p style={{ marginInline: "10vw", textAlign: "center" }}>
                     Tenés un turno agendado para el día{" "}
                     {tieneTurno != " " ? tieneTurno : tieneTurno2}

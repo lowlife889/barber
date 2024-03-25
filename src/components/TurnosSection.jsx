@@ -90,7 +90,7 @@ function TurnosSection() {
           className="inp-container"
           style={{ width: "100%", paddingInline: "10px", height: "190px" }}
         >
-          <label>Barbero</label>
+          <label>Fecha</label>
           <div className="selectors-container">
             <button
               className="btn1"

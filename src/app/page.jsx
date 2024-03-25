@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
-
+import { LuMapPin } from "react-icons/lu";
 import ImgGallery from "@/components/ImgGallery";
 import CardContainer from "@/components/CardContainer";
 
@@ -161,10 +161,8 @@ export default function Home() {
               </Link>
             </li>
             <li className="item">
-              <Link
-                href="#" className="link"
-              >
-               ¿CUARTA SECCION?
+              <Link href="#" className="link">
+                ¿CUARTA SECCION?
               </Link>
             </li>
           </ul>
@@ -193,7 +191,7 @@ export default function Home() {
           Sapiente dolore voluptas modi.
         </p>
         <div className="contenido">
-          <>{services!=[] ? <CardContainer lista={services} /> : <></>}</>
+          <>{services != [] ? <CardContainer lista={services} /> : <></>}</>
           <div className="service-img">
             <img
               loading="lazy"
@@ -241,6 +239,18 @@ export default function Home() {
               fontSize: "40px",
               cursor: "pointer",
               padding: "3px",
+              marginLeft:"5px"
+            }}
+          />
+          <LuMapPin
+            className="icon"
+            onClick={() => {
+              router.push("https://www.google.com/maps/@-32.910056,-60.8148715,3a,75y,171.29h,82.78t/data=!3m6!1e1!3m4!1sZjdB1c8jyhSxuISTefMoqA!2e0!7i16384!8i8192?entry=ttu");
+            }}
+            style={{
+              fontSize: "40px",
+              cursor: "pointer",
+              padding: "3px",
             }}
           />
         </div>
@@ -250,11 +260,18 @@ export default function Home() {
             fontWeight: "300",
             color: "rgb(100,100,100)",
             padding: "3px",
+            width:"100%",
+            display:"flex",
+            justifyContent:"center",
+            flexWrap:"wrap",
+            gap:"3px"
           }}
         >
-          Todos los derechos reservados &copy; LOREM IPSUM{" "}
-          {new Date().getFullYear()}
+          <strong style={{width:"fit-content", fontWeight:"300"}}>Todos los derechos reservados </strong>
+          <strong style={{minWidth:"170px"}}>&copy; Barber Studio's{" "}
+          {new Date().getFullYear()}</strong>
         </span>
+        
       </footer>
     </main>
   );
